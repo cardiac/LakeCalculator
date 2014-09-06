@@ -13,7 +13,7 @@
 
 + (NSNumber *)calculateLakeAreaForHeights:(NSArray *)heights
 {
-    if ([heights count] < 2)
+    if ([heights count] < 3)
         return [NSNumber numberWithFloat:0.0f];
     
     NSMutableArray *peaks = [NSMutableArray array];
