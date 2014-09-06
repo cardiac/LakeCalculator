@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  LakeViewController.h
 //  LakeCalculator
 //
 //  Created by Ryan Strug on 9/5/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface LakeViewController : UIViewController
 
 @end

@@ -2,20 +2,27 @@
 //  AppDelegate.m
 //  LakeCalculator
 //
-//  Created by Ryan Strug on 9/6/14.
+//  Created by Ryan Strug on 9/5/14.
 //  Copyright (c) 2014 Ryan Strug. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "LakeViewController.h"
+#import "Util.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    LakeViewController *rootViewController = [[LakeViewController alloc] initWithNibName:@"LakeViewController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _window.backgroundColor = [UIColor whiteColor];
+    _window.rootViewController = navController;
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
