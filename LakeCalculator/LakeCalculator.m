@@ -37,7 +37,8 @@
         
         CGFloat lakeHeight = MIN(peak.height, nextPeak.height);
         for (NSUInteger j = peak.index + 1; j < nextPeak.index; j++)
-            area += lakeHeight - [heights[j] floatValue];
+            if (lakeHeight >= [heights[j] floatValue])
+                area += lakeHeight - [heights[j] floatValue];
     }
     
     return [NSNumber numberWithFloat:area];
