@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94BA0C2819BBC4CB00BB2A49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA0C2719BBC4CB00BB2A49 /* Foundation.framework */; };
+		94BA0C2A19BBC4CB00BB2A49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA0C2919BBC4CB00BB2A49 /* CoreGraphics.framework */; };
+		94BA0C2C19BBC4CB00BB2A49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA0C2B19BBC4CB00BB2A49 /* UIKit.framework */; };
+		94BA0C3219BBC4CB00BB2A49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94BA0C3019BBC4CB00BB2A49 /* InfoPlist.strings */; };
+		94BA0C3419BBC4CB00BB2A49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BA0C3319BBC4CB00BB2A49 /* main.m */; };
+		94BA0C3819BBC4CB00BB2A49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BA0C3719BBC4CB00BB2A49 /* AppDelegate.m */; };
+		94BA0C3A19BBC4CB00BB2A49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94BA0C3919BBC4CB00BB2A49 /* Images.xcassets */; };
+		94BA0C4119BBC4CB00BB2A49 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA0C4019BBC4CB00BB2A49 /* XCTest.framework */; };
+		94BA0C4219BBC4CB00BB2A49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA0C2719BBC4CB00BB2A49 /* Foundation.framework */; };
+		94BA0C4319BBC4CB00BB2A49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BA0C2B19BBC4CB00BB2A49 /* UIKit.framework */; };
+		94BA0C4B19BBC4CB00BB2A49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94BA0C4919BBC4CB00BB2A49 /* InfoPlist.strings */; };
+		94BA0C4D19BBC4CB00BB2A49 /* LakeCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BA0C4C19BBC4CB00BB2A49 /* LakeCalculatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94BA0C4419BBC4CB00BB2A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94BA0C1C19BBC4CB00BB2A49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94BA0C2319BBC4CB00BB2A49;
+			remoteInfo = LakeCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		94BA0C2419BBC4CB00BB2A49 /* LakeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LakeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BA0C2719BBC4CB00BB2A49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94BA0C2919BBC4CB00BB2A49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94BA0C2B19BBC4CB00BB2A49 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94BA0C2F19BBC4CB00BB2A49 /* LakeCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LakeCalculator-Info.plist"; sourceTree = "<group>"; };
+		94BA0C3119BBC4CB00BB2A49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94BA0C3319BBC4CB00BB2A49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94BA0C3519BBC4CB00BB2A49 /* LakeCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LakeCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		94BA0C3619BBC4CB00BB2A49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		94BA0C3719BBC4CB00BB2A49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		94BA0C3919BBC4CB00BB2A49 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		94BA0C3F19BBC4CB00BB2A49 /* LakeCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LakeCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BA0C4019BBC4CB00BB2A49 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		94BA0C4819BBC4CB00BB2A49 /* LakeCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LakeCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		94BA0C4A19BBC4CB00BB2A49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94BA0C4C19BBC4CB00BB2A49 /* LakeCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LakeCalculatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94BA0C2119BBC4CB00BB2A49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BA0C2A19BBC4CB00BB2A49 /* CoreGraphics.framework in Frameworks */,
+				94BA0C2C19BBC4CB00BB2A49 /* UIKit.framework in Frameworks */,
+				94BA0C2819BBC4CB00BB2A49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BA0C3C19BBC4CB00BB2A49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BA0C4119BBC4CB00BB2A49 /* XCTest.framework in Frameworks */,
+				94BA0C4319BBC4CB00BB2A49 /* UIKit.framework in Frameworks */,
+				94BA0C4219BBC4CB00BB2A49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94BA0C1B19BBC4CB00BB2A49 = {
+			isa = PBXGroup;
+			children = (
+				94BA0C2D19BBC4CB00BB2A49 /* LakeCalculator */,
+				94BA0C4619BBC4CB00BB2A49 /* LakeCalculatorTests */,
+				94BA0C2619BBC4CB00BB2A49 /* Frameworks */,
+				94BA0C2519BBC4CB00BB2A49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94BA0C2519BBC4CB00BB2A49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94BA0C2419BBC4CB00BB2A49 /* LakeCalculator.app */,
+				94BA0C3F19BBC4CB00BB2A49 /* LakeCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94BA0C2619BBC4CB00BB2A49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94BA0C2719BBC4CB00BB2A49 /* Foundation.framework */,
+				94BA0C2919BBC4CB00BB2A49 /* CoreGraphics.framework */,
+				94BA0C2B19BBC4CB00BB2A49 /* UIKit.framework */,
+				94BA0C4019BBC4CB00BB2A49 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94BA0C2D19BBC4CB00BB2A49 /* LakeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				94BA0C3619BBC4CB00BB2A49 /* AppDelegate.h */,
+				94BA0C3719BBC4CB00BB2A49 /* AppDelegate.m */,
+				94BA0C3919BBC4CB00BB2A49 /* Images.xcassets */,
+				94BA0C2E19BBC4CB00BB2A49 /* Supporting Files */,
+			);
+			path = LakeCalculator;
+			sourceTree = "<group>";
+		};
+		94BA0C2E19BBC4CB00BB2A49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94BA0C2F19BBC4CB00BB2A49 /* LakeCalculator-Info.plist */,
+				94BA0C3019BBC4CB00BB2A49 /* InfoPlist.strings */,
+				94BA0C3319BBC4CB00BB2A49 /* main.m */,
+				94BA0C3519BBC4CB00BB2A49 /* LakeCalculator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94BA0C4619BBC4CB00BB2A49 /* LakeCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				94BA0C4C19BBC4CB00BB2A49 /* LakeCalculatorTests.m */,
+				94BA0C4719BBC4CB00BB2A49 /* Supporting Files */,
+			);
+			path = LakeCalculatorTests;
+			sourceTree = "<group>";
+		};
+		94BA0C4719BBC4CB00BB2A49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94BA0C4819BBC4CB00BB2A49 /* LakeCalculatorTests-Info.plist */,
+				94BA0C4919BBC4CB00BB2A49 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94BA0C2319BBC4CB00BB2A49 /* LakeCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94BA0C5019BBC4CB00BB2A49 /* Build configuration list for PBXNativeTarget "LakeCalculator" */;
+			buildPhases = (
+				94BA0C2019BBC4CB00BB2A49 /* Sources */,
+				94BA0C2119BBC4CB00BB2A49 /* Frameworks */,
+				94BA0C2219BBC4CB00BB2A49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LakeCalculator;
+			productName = LakeCalculator;
+			productReference = 94BA0C2419BBC4CB00BB2A49 /* LakeCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94BA0C3E19BBC4CB00BB2A49 /* LakeCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94BA0C5319BBC4CB00BB2A49 /* Build configuration list for PBXNativeTarget "LakeCalculatorTests" */;
+			buildPhases = (
+				94BA0C3B19BBC4CB00BB2A49 /* Sources */,
+				94BA0C3C19BBC4CB00BB2A49 /* Frameworks */,
+				94BA0C3D19BBC4CB00BB2A49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94BA0C4519BBC4CB00BB2A49 /* PBXTargetDependency */,
+			);
+			name = LakeCalculatorTests;
+			productName = LakeCalculatorTests;
+			productReference = 94BA0C3F19BBC4CB00BB2A49 /* LakeCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94BA0C1C19BBC4CB00BB2A49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ryan Strug";
+				TargetAttributes = {
+					94BA0C3E19BBC4CB00BB2A49 = {
+						TestTargetID = 94BA0C2319BBC4CB00BB2A49;
+					};
+				};
+			};
+			buildConfigurationList = 94BA0C1F19BBC4CB00BB2A49 /* Build configuration list for PBXProject "LakeCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94BA0C1B19BBC4CB00BB2A49;
+			productRefGroup = 94BA0C2519BBC4CB00BB2A49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94BA0C2319BBC4CB00BB2A49 /* LakeCalculator */,
+				94BA0C3E19BBC4CB00BB2A49 /* LakeCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94BA0C2219BBC4CB00BB2A49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BA0C3219BBC4CB00BB2A49 /* InfoPlist.strings in Resources */,
+				94BA0C3A19BBC4CB00BB2A49 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BA0C3D19BBC4CB00BB2A49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BA0C4B19BBC4CB00BB2A49 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94BA0C2019BBC4CB00BB2A49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BA0C3819BBC4CB00BB2A49 /* AppDelegate.m in Sources */,
+				94BA0C3419BBC4CB00BB2A49 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BA0C3B19BBC4CB00BB2A49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BA0C4D19BBC4CB00BB2A49 /* LakeCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94BA0C4519BBC4CB00BB2A49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94BA0C2319BBC4CB00BB2A49 /* LakeCalculator */;
+			targetProxy = 94BA0C4419BBC4CB00BB2A49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94BA0C3019BBC4CB00BB2A49 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94BA0C3119BBC4CB00BB2A49 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94BA0C4919BBC4CB00BB2A49 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94BA0C4A19BBC4CB00BB2A49 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94BA0C4E19BBC4CB00BB2A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		94BA0C4F19BBC4CB00BB2A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94BA0C5119BBC4CB00BB2A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LakeCalculator/LakeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "LakeCalculator/LakeCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94BA0C5219BBC4CB00BB2A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LakeCalculator/LakeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "LakeCalculator/LakeCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		94BA0C5419BBC4CB00BB2A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LakeCalculator.app/LakeCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LakeCalculator/LakeCalculator-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LakeCalculatorTests/LakeCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		94BA0C5519BBC4CB00BB2A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LakeCalculator.app/LakeCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LakeCalculator/LakeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "LakeCalculatorTests/LakeCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94BA0C1F19BBC4CB00BB2A49 /* Build configuration list for PBXProject "LakeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BA0C4E19BBC4CB00BB2A49 /* Debug */,
+				94BA0C4F19BBC4CB00BB2A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94BA0C5019BBC4CB00BB2A49 /* Build configuration list for PBXNativeTarget "LakeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BA0C5119BBC4CB00BB2A49 /* Debug */,
+				94BA0C5219BBC4CB00BB2A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		94BA0C5319BBC4CB00BB2A49 /* Build configuration list for PBXNativeTarget "LakeCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BA0C5419BBC4CB00BB2A49 /* Debug */,
+				94BA0C5519BBC4CB00BB2A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94BA0C1C19BBC4CB00BB2A49 /* Project object */;
+}
