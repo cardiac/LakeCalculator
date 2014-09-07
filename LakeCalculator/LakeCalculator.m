@@ -58,35 +58,32 @@ struct Peak {
 
 - (void)removePseudoPeaks:(CGFloat)height
 {
-    if (peaks > 1) {
-        while (current != &root) {
-            NSLog(@"height: %f, current->height: %f, prev->height: %f", height, current->height, current->prev ? current->prev->height : -1.0f);
-            if (height > current->height) {
-                if (current->prev->height > current->height) {
-                    struct Peak *temp = current;
-                    current = current->prev;
-                    free(temp);
-                    peaks--;
-                } else if (current->prev->height == current->height) {
-                    NSUInteger subPeaks = 1;
-                    for (struct Peak *p = current->prev; p->prev != NULL; p = p->prev) {
-                        subPeaks++;
-                        if (p->prev->height > p->height && height > p->height) {
-                            while (current != p->prev) {
-                                struct Peak *temp = current;
-                                current = current->prev;
-                                free(temp);
-                            }
-                            peaks -= subPeaks;
-                            break;
-                        }
+    if (current == NULL || peaks < 2 || height < current->height || current->prev->height < current->height)
+        return;
+    
+    while (current != &root && height > current->height) {
+        if (current->prev->height > current->height) {
+            struct Peak *temp = current;
+            current = current->prev;
+            free(temp);
+            peaks--;
+            continue;
+        } else if (current->prev->height == current->height) {
+            NSUInteger subPeaks = 1;
+            for (struct Peak *p = current->prev; p->prev != NULL; p = p->prev) {
+                subPeaks++;
+                if (p->prev->height > p->height && height > p->height) {
+                    while (current != p->prev) {
+                        struct Peak *temp = current;
+                        current = current->prev;
+                        free(temp);
                     }
+                    peaks -= subPeaks;
                     break;
-                } else
-                    break;
-            } else
-                break;
+                }
+            }
         }
+        break;
     }
 }
 
@@ -122,11 +119,9 @@ struct Peak {
     CGFloat area = 0.0f;
     for (; peaks > 1; peaks--) {
         height = MIN(current->height, current->prev->height);
-        for (NSUInteger j = current->index - 1; j > current->prev->index; j--) {
-            if (height >= [_heights[j] floatValue]) {
+        for (NSUInteger j = current->index - 1; j > current->prev->index; j--)
+            if (height >= [_heights[j] floatValue])
                 area += height - [_heights[j] floatValue];
-            }
-        }
         struct Peak *temp = current;
         current = current->prev;
         free(temp);
