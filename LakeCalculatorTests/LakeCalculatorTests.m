@@ -60,11 +60,18 @@
     array = @[@1.0f, @2.0f, @1.5f, @2.25, @2.5f, @2.0f, @1.5f, @3.0f, @2.5f, @1.5f, @2.0f];
     XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 2.5f, @"Secret peak scenario failed.");
     
+    NSLog(@"SHORT BOOK END SCENARIO.");
+    
     array = @[@3.0f, @1.0f, @2.0f, @1.0f, @3.0f];
-    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 5.0f, @"Short bath-tub scenario failed.");
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 5.0f, @"Short book end failed.");
+    
+    NSLog(@"LONG BOOK END SCENARIO.");
     
     array = @[@5.0f, @1.0f, @2.0f, @3.0f, @2.0f, @1.0f, @3.0f, @2.0f, @2.0f, @4.0f, @3.0f, @2.0f, @5.0f];
-    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 30.0f, @"Long bath-tub scenario failed.");
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 30.0f, @"Long book end failed.");
+    
+    array = @[@3.0f, @2.0f, @1.0f, @2.0f, @3.0f, @2.0f, @1.0f, @4.0f, @2.0f, @4.0f];
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 9.0f, @"Small beginnings failed.");
 }
 
 @end

@@ -38,26 +38,50 @@ struct Peak {
     return self;
 }
 
-- (void)addPeakWithHeight:(CGFloat)height index:(NSUInteger)index
+- (NSInteger)addPeakWithHeight:(CGFloat)height index:(NSUInteger)index
 {
     peaks++;
     
     struct Peak *peak = (struct Peak *)malloc(sizeof(struct Peak));
+    if (peak == NULL) {
+        NSLog(@"Memory allocation failure, file: %s, line: %u", __FILE__, __LINE__);
+        return -1;
+    }
     
     peak->height = height;
     peak->index = index;
     peak->prev = current;
     current = peak;
+    
+    return 0;
 }
 
 - (void)removePseudoPeaks:(CGFloat)height
 {
-    if (peaks > 2) {
+    if (peaks > 1) {
         while (current != &root) {
-            if (height < current->height || current->prev->height < current->height)
+            NSLog(@"height: %f, current->height: %f, prev->height: %f", height, current->height, current->prev ? current->prev->height : -1.0f);
+            if (height > current->height) {
+                if (current->prev->height > current->height) {
+                    struct Peak *old = current;
+                    current = current->prev;
+                    free(old);
+                    peaks--;
+                } else if (current->prev->height == current->height) {
+                    NSUInteger subPeaks = 1;
+                    for (struct Peak *p = current->prev; p->prev != NULL; p = p->prev) {
+                        subPeaks++;
+                        if (p->prev->height > p->height && height > p->height) {
+                            current = p->prev;
+                            peaks -= subPeaks;
+                            break;
+                        }
+                    }
+                    break;
+                } else
+                    break;
+            } else
                 break;
-            current = current->prev;
-            peaks--;
         }
     }
 }
@@ -76,14 +100,16 @@ struct Peak {
         height = [_heights[i] floatValue];
         if (height > [_heights[i - 1] floatValue] && height > [_heights[i + 1] floatValue]) {
             [self removePseudoPeaks:height];
-            [self addPeakWithHeight:height index:i];;
+            if ([self addPeakWithHeight:height index:i] != 0)
+                return nil;
         }
     }
     
     height = [[_heights lastObject] floatValue];
     if (height > [_heights[last - 1] floatValue]) {
         [self removePseudoPeaks:height];
-        [self addPeakWithHeight:height index:last];
+        if ([self addPeakWithHeight:height index:last] != 0)
+            return nil;
     }
     
     if (peaks < 2)
