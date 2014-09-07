@@ -66,7 +66,7 @@
     editTextField.inputAccessoryView = accessoryView;
     editTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
-    // fixes a weird ios issue with nibs/autolayout/etc
+    // fixes a weird issue with the navigation controller
     _tableView.contentInset = UIEdgeInsetsMake(-64.0f, 0.0f, 0.0f, 0.0f);
 }
 
@@ -80,6 +80,12 @@
 - (NSUInteger)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskAll;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if ([editTextField isFirstResponder])
+        [self dismissKeyboard:nil];
 }
 
 #pragma mark - LakeViewController
