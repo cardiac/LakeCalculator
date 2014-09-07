@@ -7,38 +7,99 @@
 //
 
 #import "LakeCalculator.h"
-#import "Peak.h"
+
+struct Peak {
+    CGFloat      height;
+    NSUInteger   index;
+    struct Peak *prev;
+};
+
+@interface LakeCalculator() {
+    struct Peak root, *current;
+    NSUInteger peaks;
+}
+
+@end
 
 @implementation LakeCalculator
 
 + (NSNumber *)calculateLakeAreaForHeights:(NSArray *)heights
 {
-    if ([heights count] < 3)
+    LakeCalculator *calc = [[LakeCalculator alloc] init];
+    calc.heights = heights;
+    return [calc calculateLakeArea];
+}
+
+- (id)init
+{
+    if (self = [super init]) {
+        peaks = 0;
+    }
+    return self;
+}
+
+- (void)addPeakWithHeight:(CGFloat)height index:(NSUInteger)index
+{
+    peaks++;
+    
+    struct Peak *peak = (struct Peak *)malloc(sizeof(struct Peak));
+    
+    peak->height = height;
+    peak->index = index;
+    peak->prev = current;
+    current = peak;
+}
+
+- (void)removePseudoPeaks:(CGFloat)height
+{
+    if (peaks > 2) {
+        while (current != &root) {
+            if (height < current->height || current->prev->height < current->height)
+                break;
+            current = current->prev;
+            peaks--;
+        }
+    }
+}
+
+- (NSNumber *)calculateLakeArea
+{
+    if ([_heights count] < 2)
         return [NSNumber numberWithFloat:0.0f];
     
-    NSMutableArray *peaks = [NSMutableArray array];
-    if ([heights[0] floatValue] > [heights[1] floatValue])
-        [peaks addObject:[Peak peakWithHeight:heights[0] index:0]];
-    NSUInteger last = [heights count] - 1;
-    for (NSUInteger i = 1; i < last; i++) {
-        CGFloat a = [heights[i - 1] floatValue], b = [heights[i] floatValue], c = [heights[i + 1] floatValue];
-        if (b > a && b > c)
-            [peaks addObject:[Peak peakWithHeight:heights[i] index:i]];
-    }
-    if ([[heights lastObject] floatValue] > [heights[last - 1] floatValue])
-        [peaks addObject:[Peak peakWithHeight:[heights lastObject] index:last]];
+    CGFloat height = [_heights[0] floatValue];
+    if (height > [_heights[1] floatValue])
+        [self addPeakWithHeight:height index:0];
     
-    if ([peaks count] < 2)
+    NSUInteger last = [_heights count] - 1;
+    for (NSUInteger i = 1; i < last; i++) {
+        height = [_heights[i] floatValue];
+        if (height > [_heights[i - 1] floatValue] && height > [_heights[i + 1] floatValue]) {
+            [self removePseudoPeaks:height];
+            [self addPeakWithHeight:height index:i];;
+        }
+    }
+    
+    height = [[_heights lastObject] floatValue];
+    if (height > [_heights[last - 1] floatValue]) {
+        [self removePseudoPeaks:height];
+        [self addPeakWithHeight:height index:last];
+    }
+    
+    if (peaks < 2)
         return [NSNumber numberWithFloat:0.0f];
     
     CGFloat area = 0.0f;
-    for (NSUInteger i = 0; i < [peaks count] - 1; i++) {
-        Peak *peak = peaks[i], *nextPeak = peaks[i + 1];
-        
-        CGFloat lakeHeight = MIN(peak.height, nextPeak.height);
-        for (NSUInteger j = peak.index + 1; j < nextPeak.index; j++)
-            if (lakeHeight >= [heights[j] floatValue])
-                area += lakeHeight - [heights[j] floatValue];
+    for (; peaks > 1; peaks--) {
+        height = MIN(current->height, current->prev->height);
+        for (NSUInteger j = current->index - 1; j > current->prev->index; j--) {
+            if (height >= [_heights[j] floatValue]) {
+                area += height - [_heights[j] floatValue];
+            }
+        }
+        struct Peak *old = current;
+        current = current->prev;
+        free(old);
     }
     
     return [NSNumber numberWithFloat:area];

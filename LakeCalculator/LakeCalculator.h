@@ -10,6 +10,8 @@
 
 @interface LakeCalculator : NSObject
 
+@property (strong, nonatomic) NSArray *heights;
+
 + (NSNumber *)calculateLakeAreaForHeights:(NSArray *)heights;
 
 @end

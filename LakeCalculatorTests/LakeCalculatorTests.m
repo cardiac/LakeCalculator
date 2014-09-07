@@ -59,6 +59,12 @@
     
     array = @[@1.0f, @2.0f, @1.5f, @2.25, @2.5f, @2.0f, @1.5f, @3.0f, @2.5f, @1.5f, @2.0f];
     XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 2.5f, @"Secret peak scenario failed.");
+    
+    array = @[@3.0f, @1.0f, @2.0f, @1.0f, @3.0f];
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 5.0f, @"Short bath-tub scenario failed.");
+    
+    array = @[@5.0f, @1.0f, @2.0f, @3.0f, @2.0f, @1.0f, @3.0f, @2.0f, @2.0f, @4.0f, @3.0f, @2.0f, @5.0f];
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 30.0f, @"Long bath-tub scenario failed.");
 }
 
 @end

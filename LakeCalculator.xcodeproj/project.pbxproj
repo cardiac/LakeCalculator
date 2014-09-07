@@ -22,7 +22,6 @@
 		94BA0C5D19BBC51100BB2A49 /* LakeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BA0C5719BBC51100BB2A49 /* LakeCalculator.m */; };
 		94BA0C5E19BBC51100BB2A49 /* LakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94BA0C5819BBC51100BB2A49 /* LakeViewController.xib */; };
 		94BA0C5F19BBC51100BB2A49 /* LakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BA0C5A19BBC51100BB2A49 /* LakeViewController.m */; };
-		94BA0C6019BBC51100BB2A49 /* Peak.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BA0C5C19BBC51100BB2A49 /* Peak.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +56,6 @@
 		94BA0C5819BBC51100BB2A49 /* LakeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LakeViewController.xib; sourceTree = "<group>"; };
 		94BA0C5919BBC51100BB2A49 /* LakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LakeViewController.h; sourceTree = "<group>"; };
 		94BA0C5A19BBC51100BB2A49 /* LakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LakeViewController.m; sourceTree = "<group>"; };
-		94BA0C5B19BBC51100BB2A49 /* Peak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peak.h; sourceTree = "<group>"; };
-		94BA0C5C19BBC51100BB2A49 /* Peak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peak.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +122,6 @@
 				94BA0C5819BBC51100BB2A49 /* LakeViewController.xib */,
 				94BA0C5919BBC51100BB2A49 /* LakeViewController.h */,
 				94BA0C5A19BBC51100BB2A49 /* LakeViewController.m */,
-				94BA0C5B19BBC51100BB2A49 /* Peak.h */,
-				94BA0C5C19BBC51100BB2A49 /* Peak.m */,
 				94BA0C3919BBC4CB00BB2A49 /* Images.xcassets */,
 				94BA0C2E19BBC4CB00BB2A49 /* Supporting Files */,
 			);
@@ -258,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94BA0C6019BBC51100BB2A49 /* Peak.m in Sources */,
 				94BA0C3819BBC4CB00BB2A49 /* AppDelegate.m in Sources */,
 				94BA0C3419BBC4CB00BB2A49 /* main.m in Sources */,
 				94BA0C5D19BBC51100BB2A49 /* LakeCalculator.m in Sources */,
@@ -459,6 +453,7 @@
 				94BA0C5219BBC4CB00BB2A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94BA0C5319BBC4CB00BB2A49 /* Build configuration list for PBXNativeTarget "LakeCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +462,7 @@
 				94BA0C5519BBC4CB00BB2A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
