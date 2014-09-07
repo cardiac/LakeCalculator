@@ -63,16 +63,20 @@ struct Peak {
             NSLog(@"height: %f, current->height: %f, prev->height: %f", height, current->height, current->prev ? current->prev->height : -1.0f);
             if (height > current->height) {
                 if (current->prev->height > current->height) {
-                    struct Peak *old = current;
+                    struct Peak *temp = current;
                     current = current->prev;
-                    free(old);
+                    free(temp);
                     peaks--;
                 } else if (current->prev->height == current->height) {
                     NSUInteger subPeaks = 1;
                     for (struct Peak *p = current->prev; p->prev != NULL; p = p->prev) {
                         subPeaks++;
                         if (p->prev->height > p->height && height > p->height) {
-                            current = p->prev;
+                            while (current != p->prev) {
+                                struct Peak *temp = current;
+                                current = current->prev;
+                                free(temp);
+                            }
                             peaks -= subPeaks;
                             break;
                         }
@@ -123,9 +127,9 @@ struct Peak {
                 area += height - [_heights[j] floatValue];
             }
         }
-        struct Peak *old = current;
+        struct Peak *temp = current;
         current = current->prev;
-        free(old);
+        free(temp);
     }
     
     return [NSNumber numberWithFloat:area];
