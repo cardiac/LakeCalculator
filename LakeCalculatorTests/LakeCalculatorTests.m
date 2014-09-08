@@ -68,6 +68,9 @@
     
     array = @[@3.0f, @2.0f, @1.0f, @2.0f, @3.0f, @2.0f, @1.0f, @4.0f, @2.0f, @4.0f];
     XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 9.0f, @"Small beginnings failed.");
+    
+    array = @[@1.0f, @2.0f, @2.5f, @1.5f, @2.0f, @1.5f, @3.0f, @2.5f, @2.0f];
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 2.5f, @"Crash scenario failed.");
 }
 
 @end
