@@ -15,7 +15,7 @@ struct Peak {
 };
 
 @interface LakeCalculator() {
-    struct Peak root, *current;
+    struct Peak *root, *current;
     NSUInteger peaks;
 }
 
@@ -53,6 +53,9 @@ struct Peak {
     peak->prev = current;
     current = peak;
     
+    if (!root)
+        root = peak;
+    
     return 0;
 }
 
@@ -61,7 +64,7 @@ struct Peak {
     if (current == NULL || peaks < 2 || height < current->height || current->prev->height < current->height)
         return;
     
-    while (current != &root && height > current->height) {
+    while (current != root && height > current->height) {
         if (current->prev->height > current->height) {
             struct Peak *temp = current;
             current = current->prev;
