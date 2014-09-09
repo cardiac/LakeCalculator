@@ -16,7 +16,7 @@ struct Peak {
 
 @interface LakeCalculator() {
     struct Peak *current;
-    NSUInteger peaks;
+    NSUInteger   peaks;
 }
 
 @end
@@ -63,9 +63,7 @@ struct Peak {
     
     while (peaks > 1 && height > current->height) {
         if (current->prev->height > current->height) {
-            struct Peak *temp = current;
-            current = current->prev;
-            free(temp);
+            [self popPeak];
             peaks--;
             continue;
         } else if (current->prev->height == current->height) {
@@ -73,11 +71,8 @@ struct Peak {
             for (struct Peak *p = current->prev; p->prev != NULL; p = p->prev) {
                 subPeaks++;
                 if (p->prev->height > p->height && height > p->height) {
-                    while (current != p->prev) {
-                        struct Peak *temp = current;
-                        current = current->prev;
-                        free(temp);
-                    }
+                    while (current != p->prev)
+                        [self popPeak];
                     peaks -= subPeaks;
                     break;
                 }
@@ -85,6 +80,13 @@ struct Peak {
         }
         break;
     }
+}
+
+- (void)popPeak
+{
+    struct Peak *temp = current;
+    current = current->prev;
+    free(temp);
 }
 
 - (NSNumber *)calculateLakeArea
@@ -122,9 +124,7 @@ struct Peak {
         for (NSUInteger j = current->index - 1; j > current->prev->index; j--)
             if (height >= [_heights[j] floatValue])
                 area += height - [_heights[j] floatValue];
-        struct Peak *temp = current;
-        current = current->prev;
-        free(temp);
+        [self popPeak];
     }
     
     return [NSNumber numberWithFloat:area];
