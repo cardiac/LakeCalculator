@@ -98,7 +98,8 @@ struct Peak {
     
     CGFloat height = [_heights[0] floatValue];
     if (height > [_heights[1] floatValue])
-        [self addPeakWithHeight:height index:0];
+        if ([self addPeakWithHeight:height index:0] != 0)
+            return nil;
     
     NSUInteger last = [_heights count] - 1;
     for (NSUInteger i = 1; i < last; i++) {
