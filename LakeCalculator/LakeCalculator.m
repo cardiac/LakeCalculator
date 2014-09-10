@@ -45,6 +45,8 @@ struct Peak {
     struct Peak *peak = (struct Peak *)malloc(sizeof(struct Peak));
     if (peak == NULL) {
         NSLog(@"Memory allocation failure, file: %s, line: %u", __FILE__, __LINE__);
+        while (current != NULL)
+            [self popPeak];
         return -1;
     }
     
