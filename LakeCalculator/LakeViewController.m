@@ -19,9 +19,10 @@
     UIBarButtonItem *doneButton;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel            *areaTotalLabel;
+@property (weak, nonatomic) IBOutlet UITableView        *tableView;
 
-@property (weak, nonatomic) IBOutlet UILabel     *areaTotalLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topVerticalConstraint;
 
 @end
 
@@ -66,7 +67,6 @@
     editTextField.inputAccessoryView = accessoryView;
     editTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
-    // fixes a weird issue with the navigation controller
     _tableView.contentInset = UIEdgeInsetsMake(-64.0f, 0.0f, 0.0f, 0.0f);
 }
 
@@ -86,6 +86,16 @@
 {
     if ([editTextField isFirstResponder])
         [self dismissKeyboard:nil];
+    
+    UIEdgeInsets inset = [_tableView contentInset];
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        _topVerticalConstraint.constant = 50.0f;
+        inset.top = 32.0f;
+    } else {
+        _topVerticalConstraint.constant = 84.0f;
+        inset.top = -22.0f;
+    }
+    _tableView.contentInset = inset;
 }
 
 #pragma mark - LakeViewController
