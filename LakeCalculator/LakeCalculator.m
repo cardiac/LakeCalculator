@@ -32,9 +32,8 @@ struct Peak {
 
 - (id)init
 {
-    if (self = [super init]) {
+    if (self = [super init])
         peaks = 0;
-    }
     return self;
 }
 
@@ -43,9 +42,9 @@ struct Peak {
     peaks++;
     
     struct Peak *peak = (struct Peak *)malloc(sizeof(struct Peak));
-    if (peak == NULL) {
+    if (!peak) {
         NSLog(@"Memory allocation failure, file: %s, line: %u", __FILE__, __LINE__);
-        while (current != NULL)
+        while (current)
             [self popPeak];
         return -1;
     }
@@ -60,7 +59,7 @@ struct Peak {
 
 - (void)removePseudoPeaks:(CGFloat)height
 {
-    if (current == NULL || peaks < 2 || height < current->height || current->prev->height < current->height)
+    if (!current || peaks < 2 || height < current->height || current->prev->height < current->height)
         return;
     
     while (peaks > 1 && height > current->height) {
@@ -70,7 +69,7 @@ struct Peak {
             continue;
         } else if (current->prev->height == current->height) {
             NSUInteger subPeaks = 1;
-            for (struct Peak *p = current->prev; p->prev != NULL; p = p->prev) {
+            for (struct Peak *p = current->prev; p->prev; p = p->prev) {
                 subPeaks++;
                 if (p->prev->height > p->height && height > p->height) {
                     while (current != p->prev)
