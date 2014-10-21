@@ -28,7 +28,7 @@
 - (void)testLakeCalculator
 {
     NSArray *array = @[@1.0f, @2.0f, @1.5f, @2.5f, @2.0f, @1.5f, @3.0f, @2.5f, @2.0f];
-    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 2.0f, @"Citrix base scenario failed.");
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 2.0f, @"Base scenario failed.");
     
     array = @[@2.0f, @1.0f, @2.0f];
     XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 1.0f, @"Tall bookends failed.");
@@ -49,7 +49,7 @@
     XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 6.5f, @"Zero ends failed.");
     
     array = @[@-1.0f, @-2.0f, @-1.5f, @-2.5f, @-2.0f, @-1.5f, @-3.0f, @-2.5f, @-2.0f, @-7.8f];
-    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 3.5f, @"Citrix base scenario but negative failed.");
+    XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 3.5f, @"Base scenario but negative failed.");
     
     array = @[@1.0f, @-1.5f, @1.0f];
     XCTAssertEqual([[LakeCalculator calculateLakeAreaForHeights:array] floatValue], 2.5f, @"Simple negative failed.");
