@@ -1,6 +1,6 @@
 # Lake Calculator
 
-The solution to the following problem. It includes unit tests.
+The solution to the following problem given to me as a programming test with a major corporation. I do not believe its publication violates any intellectual property restrictions as the code itself is mine.
 
 The app should work on any device with iOS 7.1+.
 

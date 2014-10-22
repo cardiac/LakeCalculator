@@ -37,7 +37,7 @@ struct Peak {
     return self;
 }
 
-- (NSInteger)addPeakWithHeight:(CGFloat)height index:(NSUInteger)index
+- (BOOL)addPeakWithHeight:(CGFloat)height index:(NSUInteger)index
 {
     peaks++;
     
@@ -46,7 +46,7 @@ struct Peak {
         NSLog(@"Memory allocation failure, file: %s, line: %u", __FILE__, __LINE__);
         while (current)
             [self popPeak];
-        return -1;
+        return NO;
     }
     
     peak->height = height;
@@ -54,7 +54,7 @@ struct Peak {
     peak->prev = current;
     current = peak;
     
-    return 0;
+    return YES;
 }
 
 - (void)removePseudoPeaks:(CGFloat)height
@@ -97,7 +97,7 @@ struct Peak {
     
     CGFloat height = [_heights[0] floatValue];
     if (height > [_heights[1] floatValue])
-        if ([self addPeakWithHeight:height index:0] != 0)
+        if (![self addPeakWithHeight:height index:0])
             return nil;
     
     NSUInteger last = [_heights count] - 1;
@@ -105,7 +105,7 @@ struct Peak {
         height = [_heights[i] floatValue];
         if (height > [_heights[i - 1] floatValue] && height > [_heights[i + 1] floatValue]) {
             [self removePseudoPeaks:height];
-            if ([self addPeakWithHeight:height index:i] != 0)
+            if (![self addPeakWithHeight:height index:i])
                 return nil;
         }
     }
@@ -113,7 +113,7 @@ struct Peak {
     height = [[_heights lastObject] floatValue];
     if (height > [_heights[last - 1] floatValue]) {
         [self removePseudoPeaks:height];
-        if ([self addPeakWithHeight:height index:last] != 0)
+        if (![self addPeakWithHeight:height index:last])
             return nil;
     }
     
@@ -123,9 +123,9 @@ struct Peak {
     CGFloat area = 0.0f;
     for (; peaks > 1; peaks--) {
         height = MIN(current->height, current->prev->height);
-        for (NSUInteger j = current->index - 1; j > current->prev->index; j--)
-            if (height >= [_heights[j] floatValue])
-                area += height - [_heights[j] floatValue];
+        for (NSUInteger i = current->index - 1; i > current->prev->index; i--)
+            if (height >= [_heights[i] floatValue])
+                area += height - [_heights[i] floatValue];
         [self popPeak];
     }
     
