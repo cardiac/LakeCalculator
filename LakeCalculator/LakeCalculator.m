@@ -121,7 +121,7 @@ struct Peak {
         return [NSNumber numberWithFloat:0.0f];
     
     CGFloat area = 0.0f;
-    for (; peaks > 1; peaks--) {
+    while (peaks-- > 1) {
         height = MIN(current->height, current->prev->height);
         for (NSUInteger i = current->index - 1; i > current->prev->index; i--)
             if (height >= [_heights[i] floatValue])
