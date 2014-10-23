@@ -128,6 +128,7 @@ struct Peak {
                 area += height - [_heights[i] floatValue];
         [self popPeak];
     }
+    [self popPeak];
     
     return [NSNumber numberWithFloat:area];
 }
